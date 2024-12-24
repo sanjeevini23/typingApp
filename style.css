@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #17a2b8;
+    padding: 15px;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 770px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.typing-text {
+    max-height: 255px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.typing-text p {
+    font-size: 18px;
+    text-align: justify;
+    letter-spacing: 1px;
+    word-break: break-word;
+}
+
+.typing-text span {
+    position: relative;
+}
+.content-box.content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.typing-text span.correct {
+    color: #56964f;
+}
+
+.typing-text span.incorrect {
+    color: #cb3439;
+    background: #ffc0cb;
+    outline: 1px solid #fff;
+    border-radius: 4px;
+}
+
+.typing-text span.active {
+    color: #17a2b8;
+}
+
+.typing-text span.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: #17a2b8;
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.result-details {
+    display: flex;
+    width: calc(100%-140px);
+    justify-content: space-between;
+    /* margin-bottom: 20px; */
+}
+
+.result-details li {
+    list-style: none;
+    flex: 1 1 45%;
+    margin-bottom: 10px;
+}
+
+.result-details li span {
+    font-size: 20px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    background: #17a2b8;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .typing-text p {
+        font-size: 16px;
+    }
+
+    .result-details li span {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .result-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .result-details li {
+        flex: 1 1 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+} 
